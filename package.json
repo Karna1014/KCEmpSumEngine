@@ -1,0 +1,29 @@
+{
+  "name": "kcempsumengine",
+  "version": "1.0.0",
+  "description": "Team template",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "dependencies": {
+    "inquirer": "^7.0.6",
+    "jest": "^25.1.0",
+    "promise": "^8.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest --verbose test/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Karna1014/KCEmpSumEngine.git"
+  },
+  "author": "Karna Cutolo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Karna1014/KCEmpSumEngine/issues"
+  },
+  "homepage": "https://github.com/Karna1014/KCEmpSumEngine#readme"
+}
