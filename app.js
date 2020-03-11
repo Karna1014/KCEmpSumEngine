@@ -1,4 +1,3 @@
-const Employee = require("./lib/Employee");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
@@ -11,10 +10,12 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
+var employees = [];
+
 
 async function basicInfo() {
 
-    const inqAnswer = await inquirer
+    const answers = await inquirer
          //prompts for basic info
         .prompt([
             {
@@ -44,67 +45,80 @@ async function basicInfo() {
                 {
                     name: "Intern",
                     value: 2
-                }
-                ]
+                }],
+            },
+            {
+                message: "What is their Office Number?",
+                name: "officeNumber",
+                when: (answers) => answers.Role == 0
+            },
+            {
+                message: "What is your Github UserName?",
+                name: "github",
+                when: (answers) => answers.Role == 1
+            },
+            {
+                message: "What school did you attend?",
+                name: "school",
+                when: (answers) => answers.Role == 2
             }
-      
-
-            //creates the manager
-            //pushes it into employee array
-            //promptNext()
         ])
-        .then(answer => {
-           if (answer.Role === 0) {
-               console.log("hello");
-                inquirer.prompt(managerInfo());
-           } else if (answer.Role === 1) {
-                inquirer.prompt(engineerInfo());
-           } else {
-                inquirer.prompt(internInfo());
-           }
-        }) 
+        .then(answers => {
+            if (answers.Role == 0) {
+                manager = new Manager(answers.name, answers.ID, answers.email, answers.officeNumber);
+                console.log(manager);
+            } else if (answers.Role == 1) {
+                console.log(answers);
+                engineer = new Engineer(answers.name, answers.ID, answers.email, answers.github);
+                console.log(engineer);
+            } else {
+                intern = new Intern(answers.name, answers.ID, answers.email, answers.school);
+                console.log(intern);
+            }
+        })
+
         .catch(error => {
             if (error.isTtyError) {
                 throw (error);
             } else {
-                console.log("Oops!");
+                console.log(error);
                 // answers.push[];
             }
         });
+    }
+    basicInfo();   
 
-        // console.info(answer);
-    }
-    
-    async function managerInfo () {
-        const inqAns = await inquirer
-        .prompt ([
-            {
-                message: "What is their Office Number?",
-                name: "officeNumber"
-            }
-        ]);
-            // next();
-    }
-    async function engineerInfo () {
-        const inqAns = await inquirer
-        .prompt ([
-            {
-                message: "What is your Github UserName?",
-                name: "github"
-            }   
-        ]);
-            // next();
-    }
-    async function internInfo () {
-        const inqAns = await inquirer
-        .prompt ([
-            {
-                message: "What school did you attend?",
-                name: "school"
-            }
-        ]);
+
         // next();
-    }
+    
+
+   
+//creates the manager
+            //pushes it into employee array
+            //promptNext()
+    //         .then(answer => {
+    //            if (answer.Role === 0) {
+    //                 console.log("hello");
+    //                 inquirer.prompt(managerInfo());
+    //             } else if (answer.Role === 1) {
+    //                 inquirer.prompt(engineerInfo());
+    //              } else {
+    //                  inquirer.prompt(internInfo());
+    //          }
+    //          }); 
+    //         .catch(error => {
+    //             if (error.isTtyError) {
+    //             throw (error);
+    //         } else {
+    //             console.log("Oops!");
+    //             // answers.push[];
+    //         }
+    //  });
+
+    //     ])
+       
+
+    
     // fs.appendFile('./output/team.html', (answer.data), function (err) {
     //     if (err) throw err;
     //     console.log('Saved!');
@@ -128,7 +142,7 @@ async function basicInfo() {
 
     // };
 
-             basicInfo();
+            
 
     // function writeFile(answer) {
     // const writeStream = fs.writeFile('./Employees.html');
