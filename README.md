@@ -3,7 +3,7 @@ Template for generating a teams basic information
 
  
  ## Description: 
- A command-line application that dynamically generates a ReadMe.md utilizing user input.
+ A command-line application that dynamically generates a Team roster utilizing user input.
  
  ## Table of Contents: 
   * Installation 
@@ -20,7 +20,7 @@ Template for generating a teams basic information
    
    ### Usage: 
 
-   As a developer, this project provides a template for readily generating a development team roster separating individuals into respective categories and then providing an overall collective.
+   As a developer with hopes of re-entering management, this project will provide a template for readily generating a development team roster separating individuals into respective categories and then providing an overall collective.
    
    #### License: 
 
@@ -38,4 +38,12 @@ Template for generating a teams basic information
 
    **Email: karna.cutolo@gmail.com**
      
-   #### Images:
+   #### Images: 
+
+   **Responsiveness View - I-Phone 6/7/8**
+
+   ![Main Page](./Images/I-Phone-6-7-8.png)
+
+   **Full-Screen View
+
+   ![Main Page](./Images/Full-Screen.png)

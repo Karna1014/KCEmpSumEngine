@@ -1,4 +1,8 @@
 
+h1 {
+    font-size: 4rem;
+}
+
 #card-header {
     padding: 0px;
 }
@@ -7,5 +11,7 @@ li.list-group-item {
     background-color: rgb(219, 181, 130);
     border: none;
 }
+
+
 
 
