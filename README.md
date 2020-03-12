@@ -32,7 +32,7 @@ Template for generating a teams basic information
    
    npm test
 
-    ### Questions: 
+   ### Questions: 
    
    #### If you have any questions about this repo, please reach out: 
 
