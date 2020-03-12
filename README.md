@@ -44,6 +44,6 @@ Template for generating a teams basic information
 
    ![Main Page](./Images/I-Phone-6-7-8.png)
 
-   **Full-Screen View
+   **Full-Screen View**
 
    ![Main Page](./Images/Full-Screen.png)
