@@ -8,8 +8,8 @@
     "test": "test"
   },
   "dependencies": {
-    "inquirer": "^7.0.6",
-    "jest": "^25.1.0",
+    "inquirer": "^7.1.0",
+    "jest": "^25.3.0",
     "promise": "^8.1.0"
   },
   "devDependencies": {},
